@@ -1,0 +1,69 @@
+MaterialDef MediaPlayer {
+
+
+    MaterialParameters {
+        Texture2D ColorMap
+        Color Color (Color)
+         //General alpha
+        Float Alpha
+        // Alpha threshold for fragment discarding
+        Float AlphaDiscardThreshold (AlphaTestFallOff)
+
+        Boolean EnabledVHS;
+        Boolean EnabledLine;
+        Boolean EnabledGrain;
+        Boolean EnabledScanline;
+        Boolean EnabledVignette;
+        Boolean EnabledLCD;
+        Boolean EnabledCRT;
+        Boolean EnabledGlitch;
+        Boolean EnabledBAW;
+
+    }
+
+Technique {
+    VertexShader GLSL100:   MatDefs/SimpleMediaPlayer/SimpleMediaPlayer.vert
+    FragmentShader GLSL100: MatDefs/SimpleMediaPlayer/SimpleMediaPlayer.frag
+    WorldParameters {
+        WorldViewProjectionMatrix
+        ViewProjectionMatrix
+        ViewMatrix
+        Time;
+        Resolution;
+     }
+Defines {
+            HAS_COLORMAP : ColorMap
+            HAS_COLOR : Color
+            HAS_ALPHA : Alpha
+            DISCARD_ALPHA : AlphaDiscardThreshold
+            HAS_EFFECT_VHS: EnabledVHS
+            HAS_EFFECT_LINE: EnabledLine
+            HAS_EFFECT_GRAIN: EnabledGrain
+            HAS_EFFECT_SCANLINE: EnabledScanline
+            HAS_EFFECT_VIGNETTE: EnabledVignette
+            HAS_EFFECT_LCD: EnabledLCD
+            HAS_EFFECT_CRT: EnabledCRT
+            HAS_EFFECT_GLITCH: EnabledGlitch
+            HAS_EFFECT_BAW: EnabledBAW
+ 
+        }
+    }
+
+Technique Glow {
+
+        VertexShader GLSL100:   Common/MatDefs/Misc/Unshaded.vert
+        FragmentShader GLSL100: Common/MatDefs/Light/Glow.frag
+
+        WorldParameters {
+            WorldViewProjectionMatrix
+        }
+
+        Defines {
+            NEED_TEXCOORD1
+            HAS_GLOWMAP : GlowMap
+            HAS_GLOWCOLOR : GlowColor
+            NUM_BONES : NumberOfBones
+        }
+    }
+  
+}
