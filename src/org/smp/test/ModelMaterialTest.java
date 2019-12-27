@@ -32,7 +32,7 @@ public class ModelMaterialTest extends SimpleApplication  implements ActionListe
  
   SimpleMediaPlayer  mediaPlayer;
   BitmapText hintText;  
- 
+ PointLight lamp_light;
   boolean enabled=true;
   
     /**Creates Test for SimpleMEdiaPlayer with materials
@@ -68,7 +68,7 @@ public class ModelMaterialTest extends SimpleApplication  implements ActionListe
         sun.setDirection(new Vector3f( -.5f, -.5f, -.5f).normalizeLocal());
         sceneAsNode.addLight(sun);
         
-        PointLight lamp_light = new PointLight();
+        lamp_light = new PointLight();
         lamp_light.setColor(ColorRGBA.White.mult(2.5f));
         lamp_light.setRadius(10f);
         lamp_light.setPosition(new Vector3f( 0,2,0));
@@ -192,6 +192,35 @@ public class ModelMaterialTest extends SimpleApplication  implements ActionListe
         //!!!!!!!!!!IMPORTANT
        mediaPlayer.update(tpf);
    
+       //Silly blinking screen effect
+       if(mediaPlayer.isPlaying() && !mediaPlayer.isPaused())
+         {
+          float radius=(float)oscillate(lamp_light.getRadius(),10f,12f, tpf);
+          lamp_light.setRadius(radius);
+         }
     }
+    
+    
+    public   float clamp(float val, float min, float max) {
+    return Math.max(min, Math.min(max, val));
+}
+     float osciTime=0;
+     public   float oscillate(float input, float min, float max, float delta)
+	    {
+	       float coof=0.1f ;
+	    	if(delta%2==0)
+	    	   osciTime=osciTime+delta;
+	    	 else
+	    	  osciTime=osciTime-delta;
+	    	 
+	    	float newValue=(float)clamp((float)(input + Math.sin(osciTime )* coof ), min, max);
+	    	
+	    	if(newValue==max || newValue==min)
+	    	     newValue=(min+max)/2;
+	    	 
+	    	return newValue;
+	            
+	         
+	    }
 
 }
