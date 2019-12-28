@@ -1,6 +1,11 @@
 # SimpleMediaPlayer
 Simple Media player library for JMonkey Game Engine playing mjpeg(video) and ogg(audio). 
 
+![smp_menu_geometries](../master/img/smp_menu_geometries.jpg)
+
+![smp_model_material](../master/img/smp_model_material.jpg)
+
+
 ## Target usage
 1. Full screen quads - intro, cutscenes.
 2. Smaller quads - menu animations(tutorials etc), gui HUD.
