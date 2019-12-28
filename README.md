@@ -79,7 +79,7 @@ We will use VLC again for once important thing – checking video's resolution a
 Frame rate(FPS) is a piece of information that is vital for playing mjpeg properly. In 99% of cases FPS is either 25 or 30. 
 
  
-####Converting video to set of jpgs.
+#### Converting video to set of jpgs.
 We will use VirtualDub for this. 
 
 1. Drop converted video file onto VirtualDub. 
@@ -124,10 +124,10 @@ Now place both mjpg and ogg file in the asset folder. New Media folder may is ok
     
 TIP: The github code includes MJPEGAssemblyTest class to teach you how to encode properly (after reconfiguration). Also it contains set of jpgs in aseet Test folder. 
 
- ##Installation
+ ## Installation
  The library consists only of for 4 files: java file, material def file, vert and frag shaders.  Place java file under org.smp.player or whatever you want. Put j3md and shaders in assets in MatDef/SimpleMediaPlayer folder. Et voila. We are ready. 
  
- ##Usage
+ ## Usage
  The use of the player required three steps.
  1. Declare  SimpleMediaPlayer.
  2. Generate target object (state, geometry, material).
@@ -146,15 +146,15 @@ The second call will return null. One SimpleMediaPlayer can only be used for one
 You cannot use the same SimpleMediaPlayer to generate another target object of the same type.
 
 ```
- mediaPlayer=new SimpleMediaPlayer(this);
- BaseAppState introState=mediaPlayer.genState(…);
+mediaPlayer=new SimpleMediaPlayer(this);
+BaseAppState introState=mediaPlayer.genState(…);
 BaseAppState introState2=mediaPlayer.genState(…);
  
 ```
 The second call will return the same object.
 
 
- ###Usage - configuration
+ ### Usage - configuration
  The use of the lib requires some configuration. In most cases it is the same regardless of target display. 
  
  ```
@@ -187,14 +187,14 @@ int playBackMode=SimpleMediaPlayer.PB_MODE_ONCE;
 float alpha=1f;
  ```
 
-###Usage - state
+### Usage - state
 SimpleMediaPlayer may we applied as a JME state. It useful especially if you want to play media in an intro or a cutscene. It gets self attached and dettached to a provided node. 
 
 ```
 //Declare
 mediaPlayer=new SimpleMediaPlayer(this);
 //Generate   
- BaseAppState introState=mediaPlayer.genState(guiNode, movieWidth, movieHeight, keepAspect,screenName, idleImageAssetPath, loadingImageAssetPath, pausedImageAssetPath,screenColor,videoAssetPath,audioAssetPath, framesPerSec, playBackMode,alpha );
+BaseAppState introState=mediaPlayer.genState(guiNode, movieWidth, movieHeight, keepAspect,screenName, idleImageAssetPath, loadingImageAssetPath, pausedImageAssetPath,screenColor,videoAssetPath,audioAssetPath, framesPerSec, playBackMode,alpha );
 //Update in simpleUpdate
  mediaPlayer.update(tpf);     
 ...
@@ -203,7 +203,7 @@ mediaPlayer=new SimpleMediaPlayer(this);
 ```
 You may also want to switch to a different state after the video finishes or stop the playback on a key event. Check out IntroStateTest for this. 
 
-###Usage - geometry
+### Usage - geometry
 SimpleMediaPlayer may we applied as a JME plain geometry. Useful for menu animations or gameplay HUD.
  
 ```
@@ -221,7 +221,7 @@ mediaPlayer.loadAndPlayMedia();
 
 Check out MenuGeometryTest for more info. 
 	
-###Usage - material
+### Usage - material
 SimpleMediaPlayer may also used as a plain Material. It is helpful when you want place animation in an existing Model. 
 
 ```
@@ -235,7 +235,7 @@ Material  modelMat=mediaPlayer.genMaterial(   idleImageAssetPath, loadingImageAs
 mediaPlayer.loadAndPlayMedia();      
 ```
 
-###Usage - playback
+### Usage - playback
 SimpleMediaPlayer's playback API is very simple:
 1. Load
 2. Play
