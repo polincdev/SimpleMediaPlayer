@@ -36,13 +36,13 @@ public class IntroStateTest extends SimpleApplication {
          setDisplayStatView(false);
         //setDisplayFps(false);
         
-         //Node to add the geometry to. It gets self attached and dettached on enable/disable
-        Node guiNode=getGuiNode();
         
        //Init player
          mediaPlayer=new SimpleMediaPlayer(this);
         //Config
-        //Original movie dimentions - relevant only for keeping aspect ratio
+       //Node to add the geometry to. It gets self attached and dettached on enable/disable
+        Node guiNode=getGuiNode();
+         //Original movie dimentions - relevant only for keeping aspect ratio
         int movieWidth=960;
         int movieHeight=540;
         //True if aspect ratio should be kept. False is the movie should be stretched to the screen 

@@ -339,7 +339,7 @@ private void initMediaPlayer( String idleImageAssetPath,String loadingImageAsset
 }
 
     /**
-     * Sets new data (video and audio) for the player. Used mainly with genGeometry or genMaterial. Required reloading to take effect. 
+     * Sets new data (video and audio) for the player. Used mainly with genGeometry or genMaterial. Requires reloading to take effect. 
      * @param videoAssetPath
      * @param audioAssetPath
      */

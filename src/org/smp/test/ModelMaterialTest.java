@@ -32,7 +32,7 @@ public class ModelMaterialTest extends SimpleApplication  implements ActionListe
  
   SimpleMediaPlayer  mediaPlayer;
   BitmapText hintText;  
- PointLight lamp_light;
+  PointLight lamp_light;
   boolean enabled=true;
   
     /**Creates Test for SimpleMEdiaPlayer with materials
