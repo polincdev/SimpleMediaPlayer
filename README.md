@@ -1,2 +1,2 @@
 # SimpleMediaPlayer
-Media player for JMonkey Game Engine
+Media player library for JMonkey Game Engine
