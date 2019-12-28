@@ -263,16 +263,15 @@ mediaPlayer.loadMedia();
 //Play
 mediaPlayer.playMedia();     	
 ```
-
 As mentioned above one SimpleMediaPlayer can only be used for one target. So if you want to have four menu geometries playing different media you should declare four  SimpleMediaPlayer objects. However if you want to play the same video on different models/quads you may use one material set it into many objects. Also you way reuse one geometry for different media files. SimpleMediaPlayer is not bound to one video nor audio file. For example:
 ```
 mediaPlayer.loadAndPlayMedia();     
 mediaPlayer.stopMedia();
 mediaPlayer.setMedia(“NewVideoAssetPath”, “NewAudioAssetPath”);
 mediaPlayer.loadAndPlayMedia();     
+```
 
-
-###Usage - listener
+### Usage - listener
 
 SimpleMediaPlayer comes with a listener for basic events. 
 
@@ -306,7 +305,7 @@ SimpleMediaPlayer comes with a listener for basic events.
           });
 ```
 	
-###Usage - decoration
+### Usage - decoration
 SimpleMediaPlayer may be decorated with 3 static images for the following states:
 1. Idle state - when SimpleMediaPlayer geometry is visible, but no media is loaded.
 2. Loading state - when SimpleMediaPlayer is loading mjpeg.
@@ -316,7 +315,7 @@ You provide the above mentioned images while generating state/geometry/material.
 You may provide null values, in which case screenColor(Idle/Loading) or last frame will be used(Paused).
 	
 	
-###Effects
+### Effects
 SimpleMediaPlayer comes with a set of effects/shaders that may be applied to the video, even runtime.
 
 ```
@@ -329,8 +328,8 @@ mediaPlayer.enableVignetteEffect(true);
 mediaPlayer.enableLCDEffect(true);
 mediaPlayer.enableCRTEffect(true);
 mediaPlayer.enableGlitchEffect(true);	
-
-##Tests
+```
+## Tests
 
 Four tests along with video and audio data are provided:
 1. IntroStateTest  - test state as an intro.
@@ -338,7 +337,7 @@ Four tests along with video and audio data are provided:
 3. ModelMaterialTest - test embedding the player into a model.
 4. MJPEGAssemblyTest - test generating mjpg files. Warning - requires configuration. 
 
-##Credits
+## Credits
  
  https://github.com/monceaux/java-mjpeg
  
