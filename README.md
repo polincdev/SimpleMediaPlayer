@@ -255,7 +255,7 @@ mediaPlayer.loadAndPlayMedia();
 //Pause media
 mediaPlayer.pauseMedia();
 //Unpause - calling play again doesnt work
-mediaPlayer.pauseMedia();
+mediaPlayer.unpauseMedia();
 //Stop - release all memory
 mediaPlayer.stopMedia();
 ```
