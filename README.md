@@ -93,7 +93,7 @@ We will use VirtualDub for this.
 4. Choose Image sequence.
 5. Input any Filename/Prefix name.
 6. Input extension name: .jpg
-7. Input number of digits - it's quite vital form encoder’s point of view. It basically means padding with 0s. The number should be consistent with the number of digits in the last frame.
+7. Input number of digits - it's quite vital from encoder’s point of view. It basically means padding with 0s. The number should be consistent with the number of digits in the last frame.
 For example if you have 200 frames the number should be 3. If the last frame is 50 it should be 2. 
 8. Choose output folder.
 9. Select JPG format.
