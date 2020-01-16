@@ -24,7 +24,9 @@ public class IntroStateTest extends SimpleApplication {
     BaseAppState introState;
     //State shown after the intro
     MenuState menuState;
-          
+    //Listener for breaking the intro with keys
+     ActionListener breakListener;
+     
     public static void main(String[] args) {
         IntroStateTest app = new IntroStateTest();
         app.start();
@@ -98,13 +100,18 @@ public class IntroStateTest extends SimpleApplication {
               public void onEnd(String screenName) {
                      System.out.println("Media event: onEnd by "+screenName);
                      //
+                     inputManager.deleteMapping("StopBySpace");
+                     inputManager.deleteMapping("StopByEnter");
+                     inputManager.addListener(breakListener );
+                     //
+                     //
                      switchFromIntroToMenu();
                   
                 }
           });
           
          //Key listener to stop the intro in the course of playback. Calls onEnd and switches to menu
-         ActionListener breakListener=new ActionListener(){
+           breakListener=new ActionListener(){
               @Override
               public void onAction(String name, boolean isPressed, float tpf) {
                   mediaPlayer.stopMedia();
@@ -116,12 +123,9 @@ public class IntroStateTest extends SimpleApplication {
         inputManager.addMapping("StopByEnter", new KeyTrigger(KeyInput.KEY_RETURN));
         inputManager.addListener(breakListener, new String[]{"StopBySpace"});
         inputManager.addListener(breakListener, new String[]{"StopByEnter"});
-         
-        
+          
          //Menu state - switched after intro. Initially detached. Attached on movie end
          menuState = new MenuState(guiNode);
-       
-         
        
         
     }
