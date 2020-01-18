@@ -80,20 +80,20 @@ public class MenuGeometryTest extends SimpleApplication {
         //Transparency of the screen. 1 for intro, material and menu geometries. Below 1f for HUD geometries
          float alpha=1f;
          //Relative size 16/9
-         int wid=cam.getWidth()/3;
+         int wid=(int)(cam.getHeight()/2.3f);
          int hei=(int)((wid/16f)*9f);
          int margin=wid/3;
          
          ///////////////////////GEOMETRIES
-          //1
-          menuGeometry1=mediaPlayer1.genGeometry( screenName,wid, hei, idleImageAssetPath, loadingImageAssetPath, pausedImageAssetPath,screenColor,videoAssetPath,audioAssetPath, framesPerSec, playBackMode,alpha );
-          //Effect
-           mediaPlayer1.enableVHSEffect(true);
+         //1
+         menuGeometry1=mediaPlayer1.genGeometry( screenName,wid, hei, idleImageAssetPath, loadingImageAssetPath, pausedImageAssetPath,screenColor,videoAssetPath,audioAssetPath, framesPerSec, playBackMode,alpha );
+         //Effect
+          mediaPlayer1.enableVHSEffect(true);
         
           //Add to gui 
           guiNode.attachChild(menuGeometry1);
           //Position      
-          menuGeometry1.setLocalTranslation(margin, cam.getHeight()-margin-hei, 1.0f);
+          menuGeometry1.setLocalTranslation(cam.getWidth()/4-wid/2, cam.getHeight()*0.75f-hei/2, 1.0f);
           //Add to map for picking
           pickPlayer.put(new Rectangle((int)menuGeometry1.getLocalTranslation().x, (int)menuGeometry1.getLocalTranslation().y ,mediaPlayer1.getWidth(),mediaPlayer1.getHeight()),mediaPlayer1);
           
@@ -110,8 +110,8 @@ public class MenuGeometryTest extends SimpleApplication {
           //Add to gui 
           guiNode.attachChild(menuGeometry2);
           //Position      
-          menuGeometry2.setLocalTranslation(margin,  margin , 1.0f);
-          //Add to map for picking
+           menuGeometry2.setLocalTranslation(cam.getWidth()*0.75f-wid/2, (int)menuGeometry1.getLocalTranslation().y, 1.0f);
+           //Add to map for picking
           pickPlayer.put(new Rectangle((int)menuGeometry2.getLocalTranslation().x, (int)menuGeometry2.getLocalTranslation().y ,mediaPlayer2.getWidth(),mediaPlayer2.getHeight()),mediaPlayer2);
           
            //3
@@ -128,7 +128,7 @@ public class MenuGeometryTest extends SimpleApplication {
           //Add to gui 
           guiNode.attachChild(menuGeometry3);
           //Position      
-          menuGeometry3.setLocalTranslation(cam.getWidth()-margin-wid,  margin , 1.0f);
+          menuGeometry3.setLocalTranslation(menuGeometry1.getLocalTranslation().x,  cam.getHeight()/4-hei/2 , 1.0f);
           //Add to map for picking
           pickPlayer.put(new Rectangle((int)menuGeometry3.getLocalTranslation().x, (int)menuGeometry3.getLocalTranslation().y ,mediaPlayer3.getWidth(),mediaPlayer3.getHeight()),mediaPlayer3);
           
@@ -143,11 +143,10 @@ public class MenuGeometryTest extends SimpleApplication {
           //Effect
           mediaPlayer4.enableVignetteEffect(true);
           mediaPlayer4.enableLCDEffect(true);
-         
           //Add to gui 
           guiNode.attachChild(menuGeometry4);
           //Position      
-          menuGeometry4.setLocalTranslation(cam.getWidth()-margin-wid, cam.getHeight()-margin-hei, 1.0f);
+          menuGeometry4.setLocalTranslation(menuGeometry2.getLocalTranslation().x,  menuGeometry3.getLocalTranslation().y , 1.0f);
           //Add to map for picking
           pickPlayer.put(new Rectangle((int)menuGeometry4.getLocalTranslation().x, (int)menuGeometry4.getLocalTranslation().y ,mediaPlayer1.getWidth(),mediaPlayer1.getHeight()),mediaPlayer4);
           
