@@ -1,20 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package org.smp.test;
+
+package main.java.org.smp.test;
  
 import com.jme3.app.SimpleApplication;
 import java.io.File;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.smp.player.SimpleMediaPlayer;
+import main.java.org.smp.player.SimpleMediaPlayer;
 
-/**
- *
- * @author xxx
- */
+
 public class MJPEGAssemblyTest extends SimpleApplication {
 
     

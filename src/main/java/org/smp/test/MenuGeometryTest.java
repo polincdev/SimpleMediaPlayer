@@ -1,4 +1,4 @@
-package org.smp.test;
+package main.java.org.smp.test;
  
 import com.jme3.app.SimpleApplication;
 import com.jme3.font.BitmapFont;
@@ -16,7 +16,7 @@ import com.jme3.scene.Geometry;
 import com.jme3.scene.Node;
 import java.awt.Rectangle;
 import java.util.HashMap;
-import org.smp.player.SimpleMediaPlayer;
+import main.java.org.smp.player.SimpleMediaPlayer;
 
 /**
  * Test to show how to use MediaPlayer as intro or cutscene/outro. 
