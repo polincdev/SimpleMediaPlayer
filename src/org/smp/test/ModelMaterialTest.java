@@ -1,5 +1,5 @@
  
-package main.java.org.smp.test;
+package org.smp.test;
  
  
 import com.jme3.app.SimpleApplication;
@@ -18,7 +18,7 @@ import com.jme3.renderer.queue.RenderQueue.ShadowMode;
 import com.jme3.scene.Node;
 import com.jme3.scene.Spatial;
 import com.jme3.shadow.DirectionalLightShadowFilter;
-import main.java.org.smp.player.SimpleMediaPlayer;
+import org.smp.player.SimpleMediaPlayer;
  
  
  

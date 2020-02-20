@@ -8,7 +8,7 @@ Credits
  
  */
   
-package main.java.org.smp.player;
+package org.smp.player;
 
 import com.jme3.app.Application;
 import com.jme3.app.state.BaseAppState;

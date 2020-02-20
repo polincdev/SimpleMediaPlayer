@@ -1,9 +1,9 @@
 
-package main.java.org.smp.test;
+package org.smp.test;
  
 import com.jme3.app.SimpleApplication;
 import java.io.File;
-import main.java.org.smp.player.SimpleMediaPlayer;
+import org.smp.player.SimpleMediaPlayer;
 
 
 public class MJPEGAssemblyTest extends SimpleApplication {
