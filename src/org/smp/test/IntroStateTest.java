@@ -102,7 +102,7 @@ public class IntroStateTest extends SimpleApplication {
                      //
                      inputManager.deleteMapping("StopBySpace");
                      inputManager.deleteMapping("StopByEnter");
-                     inputManager.addListener(breakListener );
+                     inputManager.removeListener(breakListener );
                      //
                      //
                      switchFromIntroToMenu();
